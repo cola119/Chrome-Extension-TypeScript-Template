@@ -1,27 +1,21 @@
 {
-    "name": "extension name",
+    "name": "Word context memory",
     "description": "extension description",
     "version": "1.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "icons": {
         "32": "images/icon_32.png",
         "48": "images/icon_48.png"
     },
-    "permissions": [
-        "activeTab",
-        "declarativeContent",
-        "storage"
-    ],
     "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
+        "service_worker": "background.js"
     },
-    "page_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "32": "images/icon_32.png"
-        }
-    }
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ]
 }
